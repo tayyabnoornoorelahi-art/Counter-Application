@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">Counter</h2>
+    <h1 class="number" id="number">0</h1>
+    <div class="btn-container">
+      <button class="btn" onclick="decreaseHandler()">DECREASE</button>
+      <button class="btn" onclick="resetHandler()">RESET</button>
+      <button class="btn" onclick="increaseHandler()">INCREASE</button>
+    </div>
+  </div>
+
+
+  
+    <script>
+  let count = 0;
+    const number = document.getElementById("number");
+
+    function updateColor() {
+      if (count > 0) number.style.color = "green";
+      else if (count < 0) number.style.color = "red";
+      else number.style.color = "black";
+    }
+
+    function decreaseHandler() {
+      count--;
+      number.textContent = count;
+      updateColor();
+    }
+
+    function resetHandler() {
+      count = 0;
+      number.textContent = count;
+      updateColor();
+    }
+
+    function increaseHandler() {
+      count++;
+      number.textContent = count;
+      updateColor();
+    }
+  </script>
+</body>
+
+</html>
